@@ -1,9 +1,10 @@
 // Dependencies
 import React, { Component } from 'react';
-import $ from 'jquery'
+import $ from 'jquery';
 
 // Custom modules/components
-import Poster from './Poster'
+import Poster from './Poster';
+import BootstrapNavBar from './BootstrapNavBar';
 
 // CUstom CSS
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
@@ -33,10 +34,12 @@ class App extends Component {
             postersArray.push(<Poster poster={poster} key={index} />)
         });
         // Load up the postersArray array with Poster Components
+        console.log(this.props.children)
 		return (
 			<div className="container">
 				<div className="row">
-                    <h1>Your posters here</h1>
+                    <BootstrapNavBar />
+                    {this.props.children}
 					{postersArray}
 				</div>
 			</div>
